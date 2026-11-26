@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  # DB_PORT (4000) va DB_NAME (test) maxfiy emas — skaner ularni kodda topib, buildni to'xtatmasin
+  SECRETS_SCAN_OMIT_KEYS = "DB_PORT,DB_NAME"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["mysql2"]
